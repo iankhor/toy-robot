@@ -1,4 +1,4 @@
-require "./../lib/robot"
+require "./../lib/robot.rb"
 
 describe Robot do
 

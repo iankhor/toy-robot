@@ -1,7 +1,7 @@
 class Robot
 
-  def report
-    
+  def self.report
+
   end
 
 end
