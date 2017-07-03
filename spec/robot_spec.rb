@@ -7,7 +7,7 @@ describe Robot do
   describe  "#report" do
     context "given the REPORT command" do
       it "prints position and direction to screen" do
-        expect(Robot.report()).to eql("0,1,NORTH")
+        expect(Robot.report()).to eql(position_direction)
       end
     end
   end
