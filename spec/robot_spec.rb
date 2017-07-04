@@ -10,7 +10,7 @@ describe Robot do
   describe  "#report" do
     context "given the REPORT command" do
       it "returns position and direction" do
-        expect(Robot.report()).to eql([position_x, position_y, direction])
+        expect(robot.report()).to eql([position_x, position_y, direction])
       end
     end
   end
@@ -21,6 +21,36 @@ describe Robot do
       it "will move one unit forward in its current direction" do
         expect(robot.move()).to eql([position_x, position_y + 1, direction])
       end
+    end
+  end
+
+  describe  "#left" do
+    context "given the LEFT command" do
+
+      context "current direction is NORTH" do
+        it "will turn left on its current position" do
+          expect(robot.left()).to eql([position_x, position_y, "WEST"])
+        end
+      end
+
+      context "current direction is EAST" do
+        it "will turn left on its current position" do
+          expect(robot.left()).to eql([position_x, position_y, "NORTH"])
+        end
+      end
+
+      context "current direction is SOUTH" do
+        it "will turn left on its current position" do
+          expect(robot.left()).to eql([position_x, position_y, "EAST"])
+        end
+      end
+
+      context "current direction is WEST" do
+        it "will turn left on its current position" do
+          expect(robot.left()).to eql([position_x, position_y, "SOUTH"])
+        end
+      end
+
     end
   end
 
