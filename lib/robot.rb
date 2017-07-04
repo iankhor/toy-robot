@@ -1,11 +1,17 @@
 class Robot
 
+  def initialize(position_x, position_y, direction)
+    @position_x = position_x
+    @position_y = position_y
+    @direction = direction
+  end
+
   def report
-    [0,1,"EAST"]
+    [@position_x , @position_y , @direction]
   end
 
   def move
-    [0,2,"NORTH"]
+    [@position_x , @position_y + 1 , @direction]
   end
 
   def left

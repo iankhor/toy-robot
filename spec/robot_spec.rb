@@ -5,7 +5,15 @@ describe Robot do
   let(:position_x) { 0 }
   let(:position_y) { 1 }
   let(:direction) { "NORTH"}
-  let(:robot) {Robot.new}
+  let(:robot) {Robot.new( position_x, position_y, direction )}
+
+  describe  "#report" do
+    context "given the REPORT command" do
+      it "returns position and direction" do
+        expect(robot.report()).to eql([position_x, position_y, direction])
+      end
+    end
+  end
 
   describe  "#report" do
     context "given the REPORT command" do
@@ -24,7 +32,7 @@ describe Robot do
     end
   end
 
-  describe  "#left" do
+  xdescribe  "#left" do
     context "given the LEFT command" do
 
       context "current direction is NORTH" do
