@@ -32,28 +32,33 @@ describe Robot do
     end
   end
 
-  xdescribe  "#left" do
+  # needs refactoring
+  describe  "#left" do
     context "given the LEFT command" do
 
       context "current direction is NORTH" do
+        let(:robot) {Robot.new( position_x, position_y, "NORTH" )}
         it "will turn left on its current position" do
           expect(robot.left()).to eql([position_x, position_y, "WEST"])
         end
       end
 
       context "current direction is EAST" do
+        let(:robot) {Robot.new( position_x, position_y, "EAST" )}
         it "will turn left on its current position" do
           expect(robot.left()).to eql([position_x, position_y, "NORTH"])
         end
       end
 
       context "current direction is SOUTH" do
+        let(:robot) {Robot.new( position_x, position_y, "SOUTH" )}
         it "will turn left on its current position" do
           expect(robot.left()).to eql([position_x, position_y, "EAST"])
         end
       end
 
       context "current direction is WEST" do
+        let(:robot) {Robot.new( position_x, position_y, "WEST" )}
         it "will turn left on its current position" do
           expect(robot.left()).to eql([position_x, position_y, "SOUTH"])
         end
