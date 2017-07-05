@@ -67,4 +67,39 @@ describe Robot do
     end
   end
 
+  describe  "#right" do
+    context "given the LEFT command" do
+
+      context "current direction is NORTH" do
+        let(:robot) {Robot.new( position_x, position_y, "NORTH" )}
+        it "will turn right on its current position" do
+          expect(robot.right()).to eql([position_x, position_y, "EAST"])
+        end
+      end
+
+      context "current direction is EAST" do
+        let(:robot) {Robot.new( position_x, position_y, "EAST" )}
+        it "will turn right on its current position" do
+          expect(robot.right()).to eql([position_x, position_y, "SOUTH"])
+        end
+      end
+
+      context "current direction is SOUTH" do
+        let(:robot) {Robot.new( position_x, position_y, "SOUTH" )}
+        it "will turn right on its current position" do
+          expect(robot.right()).to eql([position_x, position_y, "WEST"])
+        end
+      end
+
+      context "current direction is WEST" do
+        let(:robot) {Robot.new( position_x, position_y, "WEST" )}
+        it "will turn right on its current position" do
+          expect(robot.right()).to eql([position_x, position_y, "NORTH"])
+        end
+      end
+
+    end
+  end
+
+
 end

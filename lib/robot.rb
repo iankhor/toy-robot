@@ -31,7 +31,25 @@ class Robot
       current_position[1],
       new_direction
     ]
+  end
 
+  def right
+    current_position = report()
+    current_direction = current_position[2]
+
+    new_direction = case current_direction
+      when 'NORTH' then 'EAST'
+      when 'EAST'  then 'SOUTH'
+      when 'SOUTH' then 'WEST'
+      when 'WEST'  then 'NORTH'
+      else current_direction
+    end
+
+    [
+      current_position[0],
+      current_position[1],
+      new_direction
+    ]
   end
 
 end
