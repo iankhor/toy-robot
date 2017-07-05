@@ -6,6 +6,13 @@ class Robot
     @direction = direction
   end
 
+  def place(new_position_x, new_position_y, new_direction)
+    @position_x = new_position_x
+    @position_y = new_position_y
+    @direction = new_direction
+    report()
+  end
+
   def report
     [@position_x , @position_y , @direction]
   end

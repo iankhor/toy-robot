@@ -7,6 +7,22 @@ describe Robot do
   let(:direction) { "NORTH"}
   let(:robot) {Robot.new( position_x, position_y, direction )}
 
+  describe  "#place" do
+    context "given the PLACE command" do
+      let(:place_position_x) { 3 }
+      let(:place_position_y) { 5 }
+      let(:place_direction) { "SOUTH"}
+
+      it "repositions with new place positions" do
+        expect(
+          robot.place(place_position_x, place_position_y , place_direction)
+        ).to eql(
+          [place_position_x, place_position_y , place_direction]
+        )
+      end
+    end
+  end
+
   describe  "#report" do
     context "given the REPORT command" do
       it "returns position and direction" do
