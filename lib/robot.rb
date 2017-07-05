@@ -18,7 +18,8 @@ class Robot
     current_position = report()
     current_direction = current_position[2]
 
-    new_direction = case current_direction
+    new_direction =
+    case current_direction
       when 'NORTH' then 'WEST'
       when 'EAST'  then 'NORTH'
       when 'SOUTH' then 'EAST'
@@ -37,7 +38,8 @@ class Robot
     current_position = report()
     current_direction = current_position[2]
 
-    new_direction = case current_direction
+    new_direction =
+    case current_direction
       when 'NORTH' then 'EAST'
       when 'EAST'  then 'SOUTH'
       when 'SOUTH' then 'WEST'
