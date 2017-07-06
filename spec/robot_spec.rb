@@ -31,16 +31,8 @@ describe Robot do
     end
   end
 
-  describe  "#report" do
-    context "given the REPORT command" do
-      it "returns position and direction" do
-        expect(robot.report()).to eql([position_x, position_y, direction])
-      end
-    end
-  end
-
-
   describe  "#move" do
+
     context "given the MOVE command and facing NORTH" do
     let(:direction) { "NORTH"}
 
