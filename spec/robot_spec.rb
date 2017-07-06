@@ -110,7 +110,7 @@ describe Robot do
   end
 
   describe  "#right" do
-    context "given the LEFT command" do
+    context "given the RIGHT command" do
 
       context "current direction is NORTH" do
         let(:robot) {Robot.new( position_x, position_y, "NORTH" )}
@@ -140,6 +140,20 @@ describe Robot do
         end
       end
 
+    end
+  end
+
+  describe  "#place_valid?" do
+    context "given a valid place position" do
+      it "will return true" do
+        expect(robot.place_valid?(5,3)).to be_truthy
+      end
+    end
+
+    context "given a invalid place position" do
+      it "will return false" do
+        expect(robot.place_valid?(6,7)).to be_falsey
+      end
     end
   end
 

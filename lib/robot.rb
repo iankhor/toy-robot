@@ -64,4 +64,8 @@ class Robot
     report()
   end
 
+  def place_valid?(position_x, position_y)
+    (position_x > TABLE_SIZE) || (position_y > TABLE_SIZE) ? false : true
+  end
+
 end
