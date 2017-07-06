@@ -31,19 +31,11 @@ class Robot
   end
 
   def left
-    current_position = report()
-    current_direction = current_position[2]
-    new_direction = direction(current_direction, "left")
-    place( current_position[0], current_position[1], new_direction )
-    report()
+    turn("left")
   end
 
   def right
-    current_position = report()
-    current_direction = current_position[2]
-    new_direction = direction(current_direction, "right")
-    place( current_position[0], current_position[1], new_direction )
-    report()
+    turn("right")
   end
 
   def place_valid?(position_x, position_y)
@@ -52,17 +44,19 @@ class Robot
 
   private
 
-  def direction(current_direction, turn)
+  def turn(direction)
 
     new_direction =
-    case current_direction
-      when 'NORTH' then turn == "left" ? 'WEST' : 'EAST'
-      when 'EAST'  then turn == "left" ? 'NORTH': 'SOUTH'
-      when 'SOUTH' then turn == "left" ? 'EAST' : 'WEST'
-      when 'WEST'  then turn == "left" ? 'SOUTH': 'NORTH'
-      else current_direction
+    case report()[2]
+      when 'NORTH' then direction == "left" ? 'WEST' : 'EAST'
+      when 'EAST'  then direction == "left" ? 'NORTH': 'SOUTH'
+      when 'SOUTH' then direction == "left" ? 'EAST' : 'WEST'
+      when 'WEST'  then direction == "left" ? 'SOUTH': 'NORTH'
+      else report()[2]
     end
 
+    place( report()[0], report()[1], new_direction )
+    report()
   end
 
 
