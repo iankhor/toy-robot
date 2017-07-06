@@ -1,8 +1,8 @@
-require 'constants'
+# require 'constants'
 
 class Robot
 
-  def initialize(position_x, position_y, direction)
+  def initialize(position_x = 0 , position_y = 0 , direction = "NORTH")
     @position_x = position_x
     @position_y = position_y
     @direction = direction
