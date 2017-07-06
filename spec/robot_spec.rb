@@ -4,7 +4,7 @@ describe Robot do
 
   let(:position_x) { 0 }
   let(:position_y) { 1 }
-  let(:direction) { "SOUTH"}
+  let(:direction) { "NORTH"}
   let(:robot) {Robot.new( position_x, position_y, direction )}
 
   describe  "#place" do
@@ -41,9 +41,35 @@ describe Robot do
 
 
   describe  "#move" do
-    context "given the MOVE command" do
+    context "given the MOVE command and facing NORTH" do
+    let(:direction) { "NORTH"}
+
+      it "will move one unit forward in its current direction" do
+        expect(robot.move()).to eql([position_x + 1 , position_y , direction])
+      end
+    end
+
+    context "given the MOVE command and facing SOUTH" do
+    let(:direction) { "SOUTH"}
+
       it "will move one unit forward in its current direction" do
         expect(robot.move()).to eql([position_x - 1 , position_y , direction])
+      end
+    end
+
+    context "given the MOVE command and facing EAST" do
+    let(:direction) { "EAST"}
+
+      it "will move one unit forward in its current direction" do
+        expect(robot.move()).to eql([position_x , position_y + 1 , direction])
+      end
+    end
+
+    context "given the MOVE command and facing WEST" do
+    let(:direction) { "WEST"}
+
+      it "will move one unit forward in its current direction" do
+        expect(robot.move()).to eql([position_x , position_y - 1 , direction])
       end
     end
   end

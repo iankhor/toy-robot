@@ -1,3 +1,5 @@
+require 'constants'
+
 class Robot
 
   def initialize(position_x, position_y, direction)
