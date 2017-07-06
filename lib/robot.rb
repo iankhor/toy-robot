@@ -1,4 +1,4 @@
-# require 'constants'
+require_relative 'constants'
 
 class Robot
 
@@ -21,10 +21,10 @@ class Robot
 
   def move
     case @direction
-      when 'NORTH'  then place( @position_x + 1 , @position_y , @direction )
-      when 'SOUTH'  then place( @position_x - 1 , @position_y , @direction )
-      when 'EAST'   then place( @position_x , @position_y + 1 , @direction )
-      when 'WEST'   then place( @position_x , @position_y - 1 , @direction )
+      when 'NORTH'  then place( @position_x , @position_y + 1, @direction )
+      when 'SOUTH'  then place( @position_x , @position_y - 1, @direction )
+      when 'EAST'   then place( @position_x + 1 , @position_y , @direction )
+      when 'WEST'   then place( @position_x - 1 , @position_y  , @direction )
       else place( @position_x , @position_y , @direction )
     end
     report()
