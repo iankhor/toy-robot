@@ -63,7 +63,6 @@ class Robot
       else current_direction
     end
 
-    new_direction
   end
 
 
