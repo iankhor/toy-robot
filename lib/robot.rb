@@ -14,11 +14,12 @@ class Robot
   end
 
   def report
-    [@position_x , @position_y , @direction]
+    [ @position_x , @position_y , @direction ]
   end
 
   def move
-    [@position_x , @position_y + 1 , @direction]
+    place( @position_x, @position_y + 1, @direction )
+    report()
   end
 
   def left
@@ -34,11 +35,8 @@ class Robot
       else current_direction
     end
 
-    [
-      current_position[0],
-      current_position[1],
-      new_direction
-    ]
+    place( current_position[0], current_position[1], new_direction )
+    report()
   end
 
   def right
@@ -54,11 +52,8 @@ class Robot
       else current_direction
     end
 
-    [
-      current_position[0],
-      current_position[1],
-      new_direction
-    ]
+    place( current_position[0], current_position[1], new_direction )
+    report()
   end
 
 end
