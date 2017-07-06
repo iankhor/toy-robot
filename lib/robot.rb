@@ -18,7 +18,13 @@ class Robot
   end
 
   def move
-    place( @position_x, @position_y + 1, @direction )
+    case @direction
+      when 'NORTH'  then place( @position_x + 1 , @position_y , @direction )
+      when 'SOUTH'  then place( @position_x - 1 , @position_y , @direction )
+      when 'EAST'   then place( @position_x , @position_y + 1 , @direction )
+      when 'WEST'   then place( @position_x , @position_y - 1 , @direction )
+      else place( @position_x , @position_y , @direction )
+    end
     report()
   end
 
