@@ -3,7 +3,15 @@
 
 -----
 
-## Description
+## Installation
+
+1. Clone this repository to your local drive
+2. In the root folder, run `bundle exec install`
+3. To run RSpec, run `bundle exec rspec spec`
+4. To run with UI, run `ruby main.rb`
+5. Within the UI, option 6, 7 and 8 will run examples as described in the challenge description below
+
+## Challenge description
 
 * The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.
 
