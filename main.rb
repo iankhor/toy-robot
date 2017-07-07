@@ -55,3 +55,15 @@ robot.move()
 print "Current position : " + robot.report().to_s + "\n"
 puts " "
 puts "*" * 50
+
+#  ######################################
+
+puts "#" * 50
+
+puts "1. PLACE"
+puts "2. MOVE"
+puts "3. LEFT"
+puts "4. RIGHT"
+puts "5. REPORT"
+
+puts "#" * 50
